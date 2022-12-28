@@ -63,7 +63,7 @@
 					bind:group={currentTheme}
 					value={i}
 					colorName={color}
-					aria-label="Select theme {i + 1}"
+					aria-label="Select theme: {color.name}"
 				/>
 			{/each}
 		</div>

@@ -61,7 +61,7 @@
 	</svg>
 	<table class="files-table">
 		<tr>
-			<th></th>
+			<th />
 			<th>Name</th>
 			<th>Status</th>
 		</tr>
@@ -73,10 +73,13 @@
 						alt={icon === "folder" ? `${icon} file` : "Folder"}
 						width="24"
 						height="24"
-					>
+					/>
 				</td>
 				<td>{name}</td>
-				<td class="status-{status === 'success' ? status : 'sync'}">
+				<td
+					class="status-{status === 'success' ? status : 'sync'}"
+					aria-label={status === "success" ? "Synced" : "Syncing"}
+				>
 					{@html status === "success" ? Checkmark : ArrowSync}
 				</td>
 			</tr>
