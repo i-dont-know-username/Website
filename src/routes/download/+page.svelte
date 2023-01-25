@@ -1,20 +1,21 @@
 <script lang="ts">
 	import { links } from "$data/links";
 	import { externalLink, Metadata } from "$lib";
-	import { Button, InfoBadge, InfoBar, TextBlock } from "fluent-svelte";
+	import { Button, InfoBar, TextBlock } from "fluent-svelte";
 	import { onMount } from "svelte";
 	import DownloadSourceCard from "./DownloadSourceCard.svelte";
 	import type { DownloadSource } from "./types";
 
 	let isWindows = false;
+	$: msStoreLink = isWindows
+		? `ms-windows-store://pdp/?ProductId=${links.storeId}&mode=mini`
+		: `https://www.microsoft.com/store/apps/${links.storeId}?cid=FilesWebsite`;
 
 	const downloadSources = [
 		{
 			name: "Microsoft Store",
 			description: "Get Files from the Microsoft Store",
-			href: isWindows
-				? `ms-windows-store://pdp/?ProductId=${links.storeId}&mode=mini`
-				: `https://www.microsoft.com/store/apps/${links.storeId}?cid=FilesWebsite`,
+			href: msStoreLink,
 			icon: "/download-sources/msstore_light.svg",
 			darkModeIcon: "/download-sources/msstore_dark.svg",
 			external: true
@@ -45,9 +46,9 @@
 <slot />
 
 <main class="download-page">
-	<TextBlock variant="titleLarge" style="text-align: center;"
-		>Download Files</TextBlock
-	>
+	<TextBlock variant="titleLarge" style="text-align: center;">
+		Download Files
+	</TextBlock>
 	<InfoBar severity="success" closable={false}>
 		Please consider sponsoring Files on GitHub!
 
@@ -60,9 +61,7 @@
 			Sponsor Now
 		</Button>
 
-		<svelte:fragment slot="icon">
-			&nbsp;
-		</svelte:fragment>
+		<svelte:fragment slot="icon">&nbsp;</svelte:fragment>
 	</InfoBar>
 
 	<section class="download-sources">
