@@ -11,8 +11,13 @@ export const externalLink = {
 	rel: "noreferrer noopener"
 };
 
-type Entries<T, K extends keyof T = keyof T> = Array<[K, T[K]]>
+type Entries<T, K extends keyof T = keyof T> = Array<[K, T[K]]>;
 
-export const keys = <T extends object>(obj: T) => Object.keys(obj) as (keyof T)[];
-export const values = <T extends object>(obj: T) => Object.values(obj) as (T[keyof T])[];
-export const entries = <T extends object>(obj: T) => Object.entries(obj) as Entries<T>;
+export const keys = <T extends object>(obj: T) =>
+	Object.keys(obj) as Entries<T>[number][0][];
+
+export const values = <T extends object>(obj: T) =>
+	Object.values(obj) as Entries<T>[number][1][];
+
+export const entries = <T extends object>(obj: T) =>
+	Object.entries(obj) as Entries<T>;
