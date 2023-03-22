@@ -21,3 +21,7 @@ export const values = <T extends object>(obj: T) =>
 
 export const entries = <T extends object>(obj: T) =>
 	Object.entries(obj) as Entries<T>;
+
+export type Prettify<T> = {
+	[K in keyof T]: T[K];
+} & {};

@@ -11,16 +11,17 @@ export type ContributorData = {
 };
 
 // Returns a list of 25 paged contributors to the files-community/files repository
-export const getContributors: (
-	pageNumber: number
-) => Promise<ContributorData[]> = async (pageNumber = 0) =>
+export const getContributors = async (pageNumber = 0) =>
 	await fetch(
 		`https://api.github.com/repos/${owner}/${repo}/contributors?per_page=25&page=${pageNumber}`
 	)
 		// Parse body to object
-		.then(result => result.json())
+		.then(result => {
+			if (!result.ok) throw new Error(result.statusText);
+			return result.json() as Promise<ContributorData[]>;
+		})
 		// Error handler
 		.catch(err => {
 			console.error(err);
-			return "";
+			return Promise.reject(err);
 		});

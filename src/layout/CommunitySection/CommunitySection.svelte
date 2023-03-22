@@ -12,6 +12,9 @@
 		getContributors(2),
 		getContributors(3)
 	];
+
+	// taken from here: https://github.com/yoksel/url-encoder/blob/master/src/js/script.js#L14
+	const symbols = /[\r\n%#()<>?[\\\]^`{|}]/g;
 </script>
 
 <PageSection id="community-section">
@@ -44,10 +47,10 @@
 								/>
 							{/each}
 						{:catch err}
+							{@const _ = console.error(err)}
 							{#each Array(35) as _}
 								<Contributor
-									html_url="https://github.com/yaira2"
-									avatar_url="data:image/svg+xml;{encodeURIComponent(Profile)}"
+									avatar_url="data:image/svg+xml,{Profile.replace(symbols, encodeURIComponent)}"
 									contributions={0}
 								/>
 							{/each}

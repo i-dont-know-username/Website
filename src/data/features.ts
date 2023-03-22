@@ -1,8 +1,10 @@
+import type { ComponentType } from "svelte";
 
 export type FeatureCardData = {
 	title: string;
 	description: string;
-	icon: any;
+	icon: string;
+	preview: ComponentType;
 };
 
 export type Tag = {
