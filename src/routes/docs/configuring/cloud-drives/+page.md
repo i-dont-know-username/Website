@@ -2,15 +2,15 @@
 title: Cloud Drives
 ---
 
-Files will detect and display drives for most cloud providers as long as the desktop client application is installed. You can use this list to find the supported cloud drives and download links for the respective clients. Please note that Files is not associated nor recommending any of these third party clients. 
+Files will detect and display drives for most cloud providers, as long as the desktop client application is installed. You can use this list to find the supported cloud drives and download links for the respective clients. Please note that Files is not associated with nor is endorsing any of these third party clients.
 
 ## OneDrive
-OneDrive is included with Windows and no additional setup is required.
+OneDrive is included with Windows, so no additional setup is needed.
 
 ## Google Drive
 https://www.google.com/drive/download
 
-## ICloud
+## iCloud
 https://support.apple.com/en-us/HT204283
 
 ## Box
@@ -23,7 +23,7 @@ https://www.dropbox.com/install
 https://mega.io/desktop
 
 ## Amazon Drive
-Amazon Drive requires downloading and installing the desktop client.
+Amazon Drive requires downloading and installing the Amazon Drive desktop client.
 
 ## Nextcloud
 https://nextcloud.com/install
