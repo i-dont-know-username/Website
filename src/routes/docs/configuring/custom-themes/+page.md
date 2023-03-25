@@ -2,10 +2,10 @@
 title: Custom themes in Files
 ---
 
-Files comes with a large collection of custom background colors but additional customization is available for advanced users.
+Files comes with a large collection of custom background colors, but additional customization is available for advanced users.
 
 ## Advanced themeing
-To access theme values that are not exposed in the settings modal
+To access theme values that are not exposed in the settings modal:
 1. Open Files settings > Advanced > Edit settings file. This will open the main settings file in your default text editor.
 2. Close the app before making any changes to the settings file.
 
